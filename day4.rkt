@@ -10,7 +10,7 @@
 2-6,4-8")
 
 (define input (fetch-aoc-input (find-session)
-                                 2022 4 #:cache #t))
+                               2022 4 #:cache #t))
 
 (define (range-guard start end name)
   (if (<= start end)
@@ -56,5 +56,6 @@
 (define (part2 input)
   (count identity (map (compose overlaps? line->ranges) (string-split input "\n"))))
 
-(printf "Part 1: ~v~n" (part1 input))
-(printf "Part 2: ~v~n" (part2 input))
+(module+ main
+  (printf "Part 1: ~v~n" (part1 input))
+  (printf "Part 2: ~v~n" (part2 input)))
